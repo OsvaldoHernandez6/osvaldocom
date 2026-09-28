@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="auto">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Osvaldo Hernández Ortiz — Marketing Digital, Social Media & Performance</title>
+<meta name="description" content="Osvaldo Hernández Ortiz. Estratega en Marketing Digital, Social Media y Performance. Más de 15 años en agencias, fundador de Páramo, Head Digital en Himalaya y docente.">
+<meta property="og:title" content="Osvaldo Hernández Ortiz — Marketing Digital & Performance">
+<meta property="og:description" content="Estrategia, contenido y performance. +15 años en agencias. Santiago de Chile.">
+<meta property="og:image" content="foto.jpg">
+<meta name="theme-color" content="#f1ede4">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23141412'/%3E%3Ccircle cx='23' cy='9' r='4' fill='%23e8480c'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper: #f1ede4;
+  --paper-2: #e7e2d6;
+  --ink: #141412;
+  --muted: #56524a;
+  --rule: #141412;
+  --hair: rgba(20,20,18,.14);
+  --accent: #e8480c;
+  --on-accent: #141412;
+  --scale: 1;
+  --serif: "Instrument Serif", "Times New Roman", serif;
+  --sans: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #11110f; --paper-2: #1b1a17; --ink: #efeae0; --muted: #b2ac9f;
+    --rule: #efeae0; --hair: rgba(239,234,224,.14); --accent: #ff6a2b; --on-accent: #11110f;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #11110f; --paper-2: #1b1a17; --ink: #efeae0; --muted: #b2ac9f;
+  --rule: #efeae0; --hair: rgba(239,234,224,.14); --accent: #ff6a2b; --on-accent: #11110f;
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { font-size: calc(112.5% * var(--scale)); scroll-behavior: smooth; }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font-family: var(--sans); line-height: 1.6; overflow-x: hidden;
+  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+}
+/* paper grain */
+body::before {
+  content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 100; opacity: .07; mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+:root[data-theme="dark"] body::before { mix-blend-mode: screen; opacity: .05; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) body::before { mix-blend-mode: screen; opacity: .05; } }
+
+a { color: inherit; }
+::selection { background: var(--accent); color: var(--on-accent); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+p { margin: 0; }
+h1, h2, h3 { margin: 0; font-weight: 400; }
+
+html[lang="es"] [data-l="en"], html[lang="en"] [data-l="es"] { display: none !important; }
+
+.mono { font-family: var(--mono); font-size: .72rem; letter-spacing: .02em; text-transform: uppercase; }
+.frame { padding: 0 16px; max-width: 1480px; margin: 0 auto; }
+@media (min-width: 760px) { .frame { padding: 0 40px; } }
+
+.skip { position: absolute; left: -9999px; }
+.skip:focus { left: 16px; top: 12px; z-index: 200; background: var(--ink); color: var(--paper); padding: 8px 12px; }
+
+/* ---------- top strip ---------- */
+.strip {
+  position: sticky; top: 0; z-index: 50; background: var(--paper);
+  border-bottom: 1px solid var(--rule);
+}
+.strip .frame { display: flex; align-items: stretch; justify-content: space-between; min-height: 52px; gap: 16px; }
+.mark { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.mark i { width: 12px; height: 12px; background: var(--accent); border-radius: 50%; display: inline-block; }
+.idx { display: none; align-items: center; gap: 22px; }
+.idx a { text-decoration: none; padding: 4px 0; position: relative; }
+.idx a sup { color: var(--accent); margin-right: 4px; font-size: .9em; vertical-align: 0; }
+.idx a::after { content: ""; position: absolute; left: 0; right: 100%; bottom: 0; height: 1px; background: currentColor; transition: right .25s ease; }
+.idx a:hover::after { right: 0; }
+@media (min-width: 1080px) { .idx { display: flex; } }
+
+.ctrl { display: flex; align-items: center; }
+.ctrl button {
+  font: 500 .72rem/1 var(--mono); text-transform: uppercase; letter-spacing: .02em;
+  background: none; border: 0; border-left: 1px solid var(--hair); color: var(--ink);
+  min-width: 44px; height: 100%; min-height: 44px; padding: 0 12px; cursor: pointer;
+}
+.ctrl button:last-child { border-right: 1px solid var(--hair); }
+.ctrl button:hover { background: var(--ink); color: var(--paper); }
+.ctrl button:disabled { opacity: .35; cursor: not-allowed; background: none; color: var(--ink); }
+.ctrl .lbl { display: none; margin-right: 6px; color: var(--muted); }
+@media (min-width: 640px) { .ctrl .lbl { display: inline; } }
+@media (max-width: 380px) { .ctrl button { padding: 0 8px; min-width: 40px; } }
+
+/* ---------- hero ---------- */
+.hero { padding-top: 22px; }
+.meta {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px 24px;
+  padding-bottom: 18px; border-bottom: 1px solid var(--hair);
+}
+.meta div span { display: block; color: var(--muted); }
+@media (min-width: 900px) { .meta { grid-template-columns: repeat(4, 1fr); } }
+.live { display: inline-flex; align-items: center; gap: 8px; }
+.live::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); animation: blink 1.6s steps(2) infinite; }
+@keyframes blink { 50% { opacity: .15; } }
+
+.name {
+  font-family: var(--serif); font-weight: 400; line-height: .84; letter-spacing: -.035em;
+  font-size: clamp(3.6rem, 15.5vw, 15.5rem); margin: 28px 0 0; text-wrap: balance;
+}
+.name .ln { display: block; overflow: hidden; padding-bottom: .06em; }
+.name .ln > span { display: inline-block; animation: rise 1s cubic-bezier(.2,.7,.1,1) both; }
+.name .ln:nth-child(2) > span { animation-delay: .12s; }
+.name em { font-style: italic; color: var(--accent); }
+@keyframes rise { from { transform: translateY(105%); } to { transform: none; } }
+
+.hero-body {
+  display: grid; gap: 28px; margin-top: 36px; padding: 28px 0 56px; border-top: 1px solid var(--rule);
+}
+@media (min-width: 900px) {
+  .hero-body { grid-template-columns: 3fr 5fr 4fr; gap: 40px; padding-bottom: 88px; }
+}
+.fig { margin: 0; }
+.fig .ph {
+  aspect-ratio: 4 / 5; background: var(--paper-2); position: relative; overflow: hidden;
+  background-image: repeating-linear-gradient(135deg, transparent 0 9px, var(--hair) 9px 10px);
+  max-width: 340px;
+}
+.fig .ph b { position: absolute; left: 12px; bottom: 8px; font-family: var(--serif); font-size: 5rem; line-height: 1; font-weight: 400; }
+.fig img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.05); transition: filter .5s; }
+.fig:hover img { filter: none; }
+.fig figcaption { margin-top: 10px; color: var(--muted); display: flex; justify-content: space-between; max-width: 340px; }
+
+.statement { font-family: var(--serif); font-size: clamp(1.7rem, 3vw, 2.6rem); line-height: 1.12; letter-spacing: -.01em; }
+.statement em { font-style: italic; }
+.statement u { text-decoration: none; background: linear-gradient(var(--accent), var(--accent)) 0 92% / 100% .09em no-repeat; }
+
+.reach { display: flex; flex-direction: column; justify-content: flex-end; gap: 0; border-top: 1px solid var(--rule); }
+@media (min-width: 900px) { .reach { border-top: 0; } }
+.reach p { color: var(--muted); margin-bottom: 18px; }
+.row-link {
+  display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 14px;
+  text-decoration: none; padding: 16px 4px; border-bottom: 1px solid var(--rule); min-height: 60px;
+  transition: background .2s, color .2s, padding .2s;
+}
+.row-link:first-of-type { border-top: 1px solid var(--rule); }
+.row-link .k { color: var(--muted); }
+.row-link strong { font-weight: 500; font-size: 1.05rem; }
+.row-link .arr { font-family: var(--serif); font-size: 1.6rem; line-height: 1; transition: transform .2s; }
+.row-link:hover { background: var(--ink); color: var(--paper); padding-left: 14px; padding-right: 14px; }
+.row-link:hover .k { color: inherit; opacity: .7; }
+.row-link:hover .arr { transform: translate(3px, -3px); }
+
+/* ---------- ticker ---------- */
+.ticker { border-block: 1px solid var(--rule); overflow: hidden; background: var(--ink); color: var(--paper); }
+.ticker-track { display: flex; width: max-content; animation: slide 48s linear infinite; }
+.ticker-track span { font-family: var(--serif); font-style: italic; font-size: clamp(1.6rem, 3.4vw, 2.6rem); padding: 10px 0; white-space: nowrap; }
+.ticker-track span::after { content: "✳"; font-style: normal; color: var(--accent); margin: 0 .7em; font-size: .6em; vertical-align: .25em; }
+.ticker:hover .ticker-track { animation-play-state: paused; }
+@keyframes slide { to { transform: translateX(-50%); } }
+
+/* ---------- sections ---------- */
+.sec { padding: 72px 0 96px; }
+@media (min-width: 900px) { .sec { padding: 110px 0 140px; } }
+.sec-h {
+  display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 12px;
+  border-bottom: 1px solid var(--rule); padding-bottom: 14px; margin-bottom: 44px;
+}
+.sec-h h2 { font-family: var(--serif); font-size: clamp(2.6rem, 7vw, 6rem); line-height: .9; letter-spacing: -.03em; }
+.sec-h h2 em { font-style: italic; }
+.sec-h .n { color: var(--muted); text-align: right; }
+.sec-h .n b { display: block; font-family: var(--serif); font-weight: 400; font-size: clamp(2.6rem, 7vw, 6rem); line-height: .9; color: var(--accent); text-transform: none; letter-spacing: -.03em; }
+
+/* profile */
+.profile { display: grid; gap: 40px; }
+@media (min-width: 900px) { .profile { grid-template-columns: 5fr 7fr; gap: 64px; } }
+.pull { font-family: var(--serif); font-size: clamp(2rem, 4.2vw, 3.6rem); line-height: 1.02; letter-spacing: -.02em; }
+.pull > span { display: block; }
+.pull .p2 { padding-left: 1.2em; }
+.pull .p3 { padding-left: 2.4em; font-style: italic; color: var(--accent); }
+.cols { display: grid; gap: 28px; counter-reset: fn; }
+@media (min-width: 700px) { .cols { grid-template-columns: 1fr 1fr; gap: 28px 40px; } }
+.cols article { border-top: 1px solid var(--hair); padding-top: 14px; }
+.cols article:first-child { grid-column: 1 / -1; }
+.cols article:first-child p { font-size: 1.2rem; max-width: 40em; }
+.cols h3 { margin-bottom: 8px; color: var(--muted); }
+.cols p { max-width: 34em; }
+.cols p strong { font-weight: 600; }
+
+/* services */
+.svc { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
+.svc li {
+  display: grid; grid-template-columns: 3.2rem 1fr; gap: 6px 16px; padding: 22px 8px;
+  border-bottom: 1px solid var(--rule); transition: background .25s, color .25s;
+}
+.svc .no { grid-row: span 2; padding-top: .6em; color: var(--muted); }
+.svc h3 { font-family: var(--serif); font-size: clamp(1.8rem, 3.6vw, 3rem); line-height: 1; letter-spacing: -.02em; }
+.svc p { color: var(--muted); max-width: 32em; }
+@media (min-width: 900px) {
+  .svc li { grid-template-columns: 5rem 1.2fr 1fr; align-items: baseline; padding: 26px 12px; }
+  .svc .no { grid-row: auto; padding-top: 0; }
+}
+.svc li:hover { background: var(--accent); color: var(--on-accent); }
+.svc li:hover .no, .svc li:hover p { color: var(--on-accent); }
+
+/* flowchart */
+.flow { border: 1px solid var(--rule); }
+.flow-head, .flow-row { display: grid; grid-template-columns: 1fr; }
+@media (min-width: 900px) { .flow-head, .flow-row { grid-template-columns: 22rem 1fr; } }
+.flow-head { border-bottom: 1px solid var(--rule); background: var(--paper-2); }
+.flow-head .c1 { display: none; padding: 10px 16px; border-right: 1px solid var(--rule); }
+@media (min-width: 900px) { .flow-head .c1 { display: block; } }
+.axis { position: relative; height: 38px; }
+.axis span { position: absolute; top: 11px; transform: translateX(-50%); color: var(--muted); }
+.axis span:first-child { transform: none; margin-left: 6px; }
+.axis span:last-child { transform: translateX(-100%); margin-left: -6px; }
+
+.flow-row { border-bottom: 1px solid var(--hair); }
+.flow-row:last-child { border-bottom: 0; }
+.flow-row .who { padding: 18px 16px 8px; }
+@media (min-width: 900px) { .flow-row .who { border-right: 1px solid var(--rule); padding: 20px 16px; } }
+.who .role { font-family: var(--serif); font-size: 1.7rem; line-height: 1.05; letter-spacing: -.01em; }
+.who .org { display: block; margin-top: 6px; }
+.who .org a { text-decoration-color: var(--accent); text-underline-offset: 3px; }
+.track {
+  position: relative; min-height: 56px;
+  background-image: linear-gradient(to right, var(--hair) 1px, transparent 1px);
+  background-size: calc(100% / 17) 100%;
+}
+.bar {
+  position: absolute; top: 50%; height: 26px; transform: translateY(-50%);
+  left: calc((var(--from) - 2010) / 17 * 100%);
+  width: calc((var(--to) - var(--from)) / 17 * 100%);
+  background: var(--ink); color: var(--paper); display: flex; align-items: center; padding: 0 8px; overflow: hidden; white-space: nowrap;
+  transform-origin: left center; animation: grow 1.1s cubic-bezier(.2,.7,.1,1) both;
+}
+.bar.now { background: var(--accent); color: var(--on-accent); }
+@keyframes grow { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+.flow-row details { grid-column: 1 / -1; border-top: 1px dashed var(--hair); }
+.flow-row summary {
+  list-style: none; cursor: pointer; padding: 12px 16px; display: flex; justify-content: space-between; gap: 12px; color: var(--muted);
+}
+.flow-row summary::-webkit-details-marker { display: none; }
+.flow-row summary::after { content: "+"; font-family: var(--mono); font-size: 1rem; line-height: 1; color: var(--ink); }
+.flow-row details[open] summary::after { content: "−"; }
+.flow-row summary:hover { color: var(--ink); }
+.flow-row .desc { padding: 0 16px 22px; max-width: 46em; font-size: 1.05rem; }
+@media (min-width: 900px) { .flow-row .desc { margin-left: 22rem; padding-left: 16px; } }
+.flow-note { margin-top: 14px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 8px 24px; }
+.flow-note i { display: inline-block; width: 18px; height: 10px; background: var(--ink); vertical-align: middle; margin-right: 6px; }
+.flow-note i.now { background: var(--accent); }
+
+/* toolkit */
+.kit { display: grid; gap: 48px; }
+@media (min-width: 900px) { .kit { grid-template-columns: 7fr 5fr; gap: 64px; } }
+.skills { font-family: var(--serif); font-size: clamp(1.9rem, 3.6vw, 3.1rem); line-height: 1.12; letter-spacing: -.015em; }
+.skills span { white-space: nowrap; }
+.skills .sl { color: var(--accent); font-style: italic; padding: 0 .12em; white-space: normal; }
+.spec { margin: 0; border-top: 1px solid var(--rule); }
+.spec div { display: grid; grid-template-columns: 1fr; gap: 4px; padding: 16px 0; border-bottom: 1px solid var(--rule); }
+@media (min-width: 560px) { .spec div { grid-template-columns: 11rem 1fr; gap: 16px; } }
+.spec dt { color: var(--muted); padding-top: .25em; }
+.spec dd { margin: 0; }
+
+/* contact */
+.contact { background: var(--accent); color: var(--on-accent); padding: 72px 0 40px; }
+@media (min-width: 900px) { .contact { padding: 120px 0 48px; } }
+.contact .kick { display: flex; justify-content: space-between; border-bottom: 1px solid currentColor; padding-bottom: 12px; }
+.contact h2 { font-family: var(--serif); font-size: clamp(3.4rem, 12vw, 12rem); line-height: .86; letter-spacing: -.04em; margin: 36px 0 48px; }
+.contact h2 em { font-style: italic; }
+.big-links { border-top: 1px solid currentColor; }
+.big {
+  display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 8px 16px;
+  padding: 18px 0; border-bottom: 1px solid currentColor; text-decoration: none; color: inherit;
+}
+.big .k { grid-column: 1 / -1; }
+.big strong { font-family: var(--serif); font-weight: 400; font-size: clamp(1.6rem, 5.2vw, 4.6rem); line-height: 1; letter-spacing: -.02em; overflow-wrap: anywhere; }
+.big .arr { font-family: var(--serif); font-size: clamp(1.6rem, 4vw, 3.6rem); line-height: 1; transition: transform .25s; }
+.big:hover strong { font-style: italic; }
+.big:hover .arr { transform: translate(6px, -6px); }
+.copy {
+  font: 500 .72rem/1 var(--mono); text-transform: uppercase; background: var(--on-accent); color: var(--accent);
+  border: 0; padding: 12px 14px; margin-top: 18px; cursor: pointer; min-height: 44px;
+}
+.foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; margin-top: 72px; }
+.foot a { text-underline-offset: 3px; }
+
+/* whatsapp tab */
+.wa-tab {
+  position: fixed; z-index: 60; right: 0; bottom: 0; left: 0;
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  background: var(--ink); color: var(--paper); text-decoration: none; padding: 14px 16px; min-height: 52px;
+  transform: translateY(140%); visibility: hidden; transition: transform .35s ease, visibility .35s;
+}
+.wa-tab.show { transform: none; visibility: visible; }
+.wa-tab .dot { width: 8px; height: 8px; border-radius: 50%; background: #25d366; display: inline-block; margin-right: 8px; }
+@media (min-width: 760px) {
+  .wa-tab { left: auto; right: 24px; bottom: 24px; padding: 14px 18px; gap: 20px; }
+}
+.wa-tab:hover { background: var(--accent); color: var(--on-accent); }
+body { padding-bottom: 52px; }
+@media (min-width: 760px) { body { padding-bottom: 0; } }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .ticker-track { flex-wrap: wrap; width: auto; }
+  .ticker-track span[aria-hidden] { display: none; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#perfil"><span data-l="es">Saltar al contenido</span><span data-l="en">Skip to content</span></a>
+
+<header class="strip">
+  <div class="frame">
+    <a class="mark mono" href="#top" aria-label="Osvaldo Hernández Ortiz — inicio"><i aria-hidden="true"></i>O.H.O.</a>
+    <nav class="idx mono" aria-label="Índice">
+      <a href="#perfil"><sup>01</sup><span data-l="es">Perfil</span><span data-l="en">Profile</span></a>
+      <a href="#servicios"><sup>02</sup><span data-l="es">Servicios</span><span data-l="en">Services</span></a>
+      <a href="#trayectoria"><sup>03</sup><span data-l="es">Trayectoria</span><span data-l="en">Track record</span></a>
+      <a href="#herramientas"><sup>04</sup><span data-l="es">Herramientas</span><span data-l="en">Toolkit</span></a>
+      <a href="#contacto"><sup>05</sup><span data-l="es">Contacto</span><span data-l="en">Contact</span></a>
+    </nav>
+    <div class="ctrl">
+      <button type="button" id="lang"><span class="lbl" data-l="es">Idioma</span><span class="lbl" data-l="en">Lang</span><span id="lang-txt">EN</span></button>
+      <button type="button" id="size-down" aria-label="Texto más pequeño / Smaller text">A−</button>
+      <button type="button" id="size-up" aria-label="Texto más grande / Larger text">A+</button>
+      <button type="button" id="theme"><span id="theme-txt">Oscuro</span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- ======= HERO ======= -->
+  <section class="hero frame" id="top">
+    <div class="meta mono">
+      <div><span data-l="es">Disciplina</span><span data-l="en">Discipline</span>Marketing Digital / Performance</div>
+      <div><span data-l="es">Base</span><span data-l="en">Based in</span>Santiago, Chile — <time id="clock">--:--</time> CLT</div>
+      <div><span data-l="es">Estado</span><span data-l="en">Status</span><b class="live"><span data-l="es">Abierto a proyectos</span><span data-l="en">Open to projects</span></b></div>
+      <div><span data-l="es">Idiomas de trabajo</span><span data-l="en">Working languages</span>ES / EN</div>
+    </div>
+
+    <h1 class="name" aria-label="Osvaldo Hernández Ortiz">
+      <span class="ln" aria-hidden="true"><span>Osvaldo</span></span>
+      <span class="ln" aria-hidden="true"><span>Hernández <em>Ortiz</em></span></span>
+    </h1>
+
+    <div class="hero-body">
+      <figure class="fig">
+        <div class="ph">
+          <b aria-hidden="true">O.</b>
+          <img src="foto.jpg" alt="Retrato de Osvaldo Hernández Ortiz" onerror="this.remove()">
+        </div>
+        <figcaption class="mono"><span>Fig. 01</span><span data-l="es">Publicista · Docente</span><span data-l="en">Advertiser · Lecturer</span></figcaption>
+      </figure>
+
+      <p class="statement">
+        <span data-l="es">Ayudo a marcas, agencias y emprendedores a convertir <em>atención</em> en <u>resultados medibles</u>, uniendo estrategia, contenido y performance. Más de 15 años haciéndolo desde agencias, desde mi propia agencia y desde el aula.</span>
+        <span data-l="en">I help brands, agencies and founders turn <em>attention</em> into <u>measurable results</u> by bringing strategy, content and performance together. 15+ years doing it from agencies, from my own agency and from the classroom.</span>
+      </p>
+
+      <div class="reach">
+        <p><span data-l="es">Contacto directo, sin formularios.</span><span data-l="en">Direct contact, no forms.</span></p>
+        <a class="row-link wa-link" href="https://wa.me/56951179298" target="_blank" rel="noopener">
+          <span class="k mono">WA</span><strong>+56 9 5117 9298</strong><span class="arr" aria-hidden="true">↗</span>
+        </a>
+        <a class="row-link mail-link" href="mailto:osvaldo.hernandez.o@gmail.com">
+          <span class="k mono">@</span><strong><span data-l="es">Escríbeme un correo</span><span data-l="en">Send me an email</span></strong><span class="arr" aria-hidden="true">↗</span>
+        </a>
+        <a class="row-link" href="https://www.linkedin.com/in/osvaldohernandez" target="_blank" rel="noopener">
+          <span class="k mono">in</span><strong>LinkedIn</strong><span class="arr" aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="ticker" aria-label="Herramientas / Tools">
+    <div class="ticker-track">
+      <span>Meta Business</span><span>TikTok Ads</span><span>Google Analytics 4</span><span>Looker Studio</span><span>Shopify</span><span>Midjourney</span><span>ElevenLabs</span><span>Claude</span><span>Lovable</span><span>CapCut</span><span>Freepik Spaces</span><span>Facebook Blueprint</span>
+      <span aria-hidden="true">Meta Business</span><span aria-hidden="true">TikTok Ads</span><span aria-hidden="true">Google Analytics 4</span><span aria-hidden="true">Looker Studio</span><span aria-hidden="true">Shopify</span><span aria-hidden="true">Midjourney</span><span aria-hidden="true">ElevenLabs</span><span aria-hidden="true">Claude</span><span aria-hidden="true">Lovable</span><span aria-hidden="true">CapCut</span><span aria-hidden="true">Freepik Spaces</span><span aria-hidden="true">Facebook Blueprint</span>
+    </div>
+  </div>
+
+  <!-- ======= 01 PERFIL ======= -->
+  <section class="sec frame" id="perfil" aria-labelledby="h1">
+    <div class="sec-h">
+      <h2 id="h1"><span data-l="es">Perfil</span><span data-l="en">Profile</span></h2>
+      <div class="n mono"><b>01</b><span data-l="es">Quién soy</span><span data-l="en">Who I am</span></div>
+    </div>
+    <div class="profile">
+      <p class="pull" aria-hidden="true">
+        <span class="p1"><span data-l="es">15 años.</span><span data-l="en">15 years.</span></span>
+        <span class="p2"><span data-l="es">5 agencias.</span><span data-l="en">5 agencies.</span></span>
+        <span class="p3"><span data-l="es">Una propia.</span><span data-l="en">One of my own.</span></span>
+      </p>
+      <div class="cols">
+        <article>
+          <h3 class="mono">(a) <span data-l="es">En resumen</span><span data-l="en">In short</span></h3>
+          <p><span data-l="es">Soy <strong>Osvaldo Hernández Ortiz</strong>, especialista en <strong>Marketing Digital, Social Media y Performance</strong>. Publicista de profesión, diplomado en estrategia digital y docente.</span><span data-l="en">I'm <strong>Osvaldo Hernández Ortiz</strong>, a specialist in <strong>Digital Marketing, Social Media and Performance</strong>. Advertiser by profession, with a diploma in digital strategy, and a lecturer.</span></p>
+        </article>
+        <article>
+          <h3 class="mono">(b) <span data-l="es">Agencia</span><span data-l="en">Agency</span></h3>
+          <p><span data-l="es">Amplia experiencia en agencias de Chile como Director Digital, líder de contenidos y gestor de equipos digitales. Fui fundador de una agencia digital, donde llevé la operación en su totalidad.</span><span data-l="en">Extensive agency experience in Chile as Digital Director, content lead and digital team manager. I founded a digital agency and ran its entire operation.</span></p>
+        </article>
+        <article>
+          <h3 class="mono">(c) <span data-l="es">Aula y emprendimiento</span><span data-l="en">Classroom & startups</span></h3>
+          <p><span data-l="es">Docente de Social Media y Paid Media en universidades, centros de capacitación y clases personalizadas. Asesoro emprendimientos y he ganado fondos concursables con el proyecto InfinityFood.</span><span data-l="en">Lecturer in Social Media and Paid Media at universities, training centres and private classes. I advise startups and have won competitive public funding with the InfinityFood project.</span></p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= 02 SERVICIOS ======= -->
+  <section class="sec frame" id="servicios" aria-labelledby="h2" style="padding-top:0">
+    <div class="sec-h">
+      <h2 id="h2"><span data-l="es">Servicios</span><span data-l="en">Services</span></h2>
+      <div class="n mono"><b>02</b><span data-l="es">Qué hago</span><span data-l="en">What I do</span></div>
+    </div>
+    <ol class="svc">
+      <li><span class="no mono">/01</span><h3><span data-l="es">Estrategia digital y de marca</span><span data-l="en">Digital & brand strategy</span></h3><p><span data-l="es">Diagnóstico, posicionamiento y plan por canal con objetivos y KPIs claros.</span><span data-l="en">Audit, positioning and a channel-by-channel plan with clear goals and KPIs.</span></p></li>
+      <li><span class="no mono">/02</span><h3>Paid Media <em>&amp;</em> Performance</h3><p><span data-l="es">Campañas en Meta, TikTok y Google pensadas para convertir, optimizadas de forma continua.</span><span data-l="en">Meta, TikTok and Google campaigns built to convert and continuously optimised.</span></p></li>
+      <li><span class="no mono">/03</span><h3><span data-l="es">Social Media y contenidos</span><span data-l="en">Social Media & content</span></h3><p><span data-l="es">Líneas editoriales, creatividad y producción de contenido que conecta.</span><span data-l="en">Editorial lines, creative direction and content that connects.</span></p></li>
+      <li><span class="no mono">/04</span><h3><span data-l="es">Métricas y datos</span><span data-l="en">Analytics & data</span></h3><p><span data-l="es">Medición en GA4 y dashboards en Looker Studio para decidir con datos.</span><span data-l="en">GA4 measurement and Looker Studio dashboards to decide with data.</span></p></li>
+      <li><span class="no mono">/05</span><h3><span data-l="es">Docencia y talleres</span><span data-l="en">Teaching & workshops</span></h3><p><span data-l="es">Clases de Social Media, Paid Media e IA aplicada para equipos y emprendedores.</span><span data-l="en">Social Media, Paid Media and applied AI training for teams and founders.</span></p></li>
+      <li><span class="no mono">/06</span><h3><span data-l="es">Liderazgo de equipos</span><span data-l="en">Team leadership</span></h3><p><span data-l="es">Estructura, procesos y gestión de community, creadores y editores.</span><span data-l="en">Structure, processes and management for community, creators and editors.</span></p></li>
+    </ol>
+  </section>
+
+  <!-- ======= 03 TRAYECTORIA ======= -->
+  <section class="sec frame" id="trayectoria" aria-labelledby="h3" style="padding-top:0">
+    <div class="sec-h">
+      <h2 id="h3"><span data-l="es">Trayectoria</span><span data-l="en">Track record</span></h2>
+      <div class="n mono"><b>03</b><span data-l="es">Flowchart 2010—2026</span><span data-l="en">Flowchart 2010—2026</span></div>
+    </div>
+
+    <div class="flow" role="list">
+      <div class="flow-head mono" aria-hidden="true">
+        <div class="c1"><span data-l="es">Rol / Agencia</span><span data-l="en">Role / Agency</span></div>
+        <div class="axis">
+          <span style="left:0">2010</span><span style="left:23.53%">2014</span><span style="left:47.06%">2018</span><span style="left:70.59%">2022</span><span style="left:100%">2026</span>
+        </div>
+      </div>
+
+      <div class="flow-row" role="listitem">
+        <div class="who">
+          <p class="role">Head Digital</p>
+          <span class="org mono">Agencia Himalaya · <span data-l="es">jul 2024 — feb 2026</span><span data-l="en">Jul 2024 — Feb 2026</span></span>
+        </div>
+        <div class="track" aria-hidden="true"><div class="bar now mono" style="--from:2024.5;--to:2026.09">1.6a</div></div>
+        <details open>
+          <summary class="mono"><span data-l="es">Detalle del rol</span><span data-l="en">Role details</span></summary>
+          <p class="desc"><span data-l="es">A cargo del equipo digital de la agencia: community, creadores, editores y gestión. Desarrollo de estrategias digitales, de contenidos y de marca. Apoyo en licitaciones y labores estratégicas del negocio.</span><span data-l="en">Led the agency's digital team: community managers, creators, editors and account management. Built digital, content and brand strategies, and supported pitches and strategic business work.</span></p>
+        </details>
+      </div>
+
+      <div class="flow-row" role="listitem">
+        <div class="who">
+          <p class="role"><span data-l="es">Director Digital &amp; Fundador</span><span data-l="en">Digital Director &amp; Founder</span></p>
+          <span class="org mono"><a href="https://paramo.cl" target="_blank" rel="noopener">Páramo.cl</a> · <span data-l="es">mar 2020 — mar 2024</span><span data-l="en">Mar 2020 — Mar 2024</span></span>
+        </div>
+        <div class="track" aria-hidden="true"><div class="bar mono" style="--from:2020.17;--to:2024.17">4a</div></div>
+        <details>
+          <summary class="mono"><span data-l="es">Detalle del rol</span><span data-l="en">Role details</span></summary>
+          <p class="desc"><span data-l="es">Páramo fue una agencia de ADN digital especializada en creatividad, contenidos y performance, que unió las tres especialidades con clientes del mundo inmobiliario, transporte de pasajeros, tecnología y B2B, trabajando con servicios de tecnología e innovación.</span><span data-l="en">Páramo was a digital-native agency specialising in creativity, content and performance, combining all three for clients in real estate, passenger transport, technology and B2B, including tech and innovation services.</span></p>
+        </details>
+      </div>
+
+      <div class="flow-row" role="listitem">
+        <div class="who">
+          <p class="role"><span data-l="es">Community → Líder Digital</span><span data-l="en">Community → Digital Lead</span></p>
+          <span class="org mono">Havas Chile · Groenlandia · Islandia · <span data-l="es">mar 2010 — oct 2019</span><span data-l="en">Mar 2010 — Oct 2019</span></span>
+        </div>
+        <div class="track" aria-hidden="true"><div class="bar mono" style="--from:2010.17;--to:2019.75">9.6a</div></div>
+        <details>
+          <summary class="mono"><span data-l="es">Detalle del rol</span><span data-l="en">Role details</span></summary>
+          <p class="desc"><span data-l="es">Comencé como Community Manager y asistente de medios. Con los años pasé a ser líder digital de distintas agencias como Islandia, Groenlandia y Havas.</span><span data-l="en">Started as Community Manager and media assistant, and over the years became Digital Lead at agencies such as Islandia, Groenlandia and Havas.</span></p>
+        </details>
+      </div>
+    </div>
+    <p class="flow-note mono">
+      <span><i aria-hidden="true"></i><span data-l="es">Agencia</span><span data-l="en">Agency</span></span>
+      <span><i class="now" aria-hidden="true"></i><span data-l="es">Rol más reciente</span><span data-l="en">Most recent role</span></span>
+      <span><span data-l="es">En paralelo: docencia y asesoría a emprendimientos</span><span data-l="en">In parallel: teaching and startup advisory</span></span>
+    </p>
+  </section>
+
+  <!-- ======= 04 HERRAMIENTAS ======= -->
+  <section class="sec frame" id="herramientas" aria-labelledby="h4" style="padding-top:0">
+    <div class="sec-h">
+      <h2 id="h4"><span data-l="es">Herramientas</span><span data-l="en">Toolkit</span></h2>
+      <div class="n mono"><b>04</b><span data-l="es">Habilidades · IA</span><span data-l="en">Skills · AI</span></div>
+    </div>
+    <div class="kit">
+      <p class="skills">
+        <span>Social Media <span data-l="es">y métricas</span><span data-l="en">& metrics</span></span><span class="sl"> / </span>
+        <span>Paid Media <span data-l="es">y</span><span data-l="en">&</span> Performance</span><span class="sl"> / </span>
+        <span data-l="es">Creatividad y contenidos</span><span data-l="en">Creative & content</span><span class="sl"> / </span>
+        <span data-l="es">Métricas y datos</span><span data-l="en">Analytics & data</span><span class="sl"> / </span>
+        <span data-l="es">Gestión y servicio</span><span data-l="en">Management & service</span><span class="sl"> / </span>
+        <span data-l="es">Desarrollo web</span><span data-l="en">Web development</span>
+      </p>
+      <dl class="spec">
+        <div><dt class="mono"><span data-l="es">Digitales</span><span data-l="en">Digital</span></dt><dd>Meta Business, TikTok Ads, Google GA4, Shopify, Looker Studio, <span data-l="es">monitoreo y benchmark</span><span data-l="en">social listening & benchmark</span></dd></div>
+        <div><dt class="mono"><span data-l="es">IA / Creativas</span><span data-l="en">AI / Creative</span></dt><dd>Claude, Codex, ElevenLabs, Midjourney, Lovable, Freepik Spaces, CapCut, Affinity</dd></div>
+        <div><dt class="mono"><span data-l="es">Equipos</span><span data-l="en">Teams</span></dt><dd>Monday, Trello, Slack, Basecamp</dd></div>
+        <div><dt class="mono"><span data-l="es">Certificaciones</span><span data-l="en">Certifications</span></dt><dd>Facebook Blueprint, Google Fundamentals, Programmatic <span data-l="es">y otras</span><span data-l="en">and more</span></dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ======= 05 CONTACTO ======= -->
+  <section class="contact" id="contacto" aria-labelledby="h5">
+    <div class="frame">
+      <div class="kick mono"><span>05 — <span data-l="es">Contacto</span><span data-l="en">Contact</span></span><span><span data-l="es">Respondo personalmente</span><span data-l="en">I reply personally</span></span></div>
+      <h2 id="h5"><span data-l="es">¿Hablamos<br>de tu <em>próximo</em><br>proyecto?</span><span data-l="en">Shall we<br>talk about your<br><em>next</em> project?</span></h2>
+      <div class="big-links">
+        <a class="big wa-link" href="https://wa.me/56951179298" target="_blank" rel="noopener">
+          <span class="k mono">WhatsApp</span><strong>+56 9 5117 9298</strong><span class="arr" aria-hidden="true">↗</span>
+        </a>
+        <a class="big mail-link" href="mailto:osvaldo.hernandez.o@gmail.com">
+          <span class="k mono"><span data-l="es">Correo</span><span data-l="en">Email</span></span><strong>osvaldo.hernandez.o<wbr>@gmail.com</strong><span class="arr" aria-hidden="true">↗</span>
+        </a>
+      </div>
+      <button class="copy" type="button" id="copy"><span data-l="es">Copiar correo</span><span data-l="en">Copy email</span></button>
+      <span id="copied" class="mono" role="status" aria-live="polite" style="margin-left:12px"></span>
+
+      <footer class="foot mono">
+        <span>© <span id="year">2026</span> Osvaldo Hernández Ortiz</span>
+        <a href="https://www.linkedin.com/in/osvaldohernandez" target="_blank" rel="noopener">linkedin.com/in/osvaldohernandez</a>
+        <a href="#top"><span data-l="es">Volver arriba ↑</span><span data-l="en">Back to top ↑</span></a>
+      </footer>
+    </div>
+  </section>
+</main>
+
+<a class="wa-tab wa-link mono" id="wa-tab" href="https://wa.me/56951179298" target="_blank" rel="noopener">
+  <span><span class="dot" aria-hidden="true"></span><span data-l="es">Escríbeme por WhatsApp</span><span data-l="en">Message me on WhatsApp</span></span><span aria-hidden="true">↗</span>
+</a>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  var EMAIL = "osvaldo.hernandez.o@gmail.com", PHONE = "56951179298";
+  var store = {
+    get: function (k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
+    set: function (k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+  };
+  function $(id) { return document.getElementById(id); }
+
+  /* language */
+  var T = {
+    es: { wa: "Hola Osvaldo, vi tu sitio web y me gustaría conversar sobre un proyecto.", subj: "Contacto desde tu sitio web", next: "EN", nextLbl: "Switch to English", dark: "Oscuro", light: "Claro", copied: "Copiado ✓", title: "Osvaldo Hernández Ortiz — Marketing Digital, Social Media & Performance" },
+    en: { wa: "Hi Osvaldo, I saw your website and would like to talk about a project.", subj: "Contact from your website", next: "ES", nextLbl: "Cambiar a español", dark: "Dark", light: "Light", copied: "Copied ✓", title: "Osvaldo Hernández Ortiz — Digital Marketing, Social Media & Performance" }
+  };
+  function setLang(l) {
+    root.lang = l;
+    $("lang-txt").textContent = T[l].next;
+    $("lang").setAttribute("aria-label", T[l].nextLbl);
+    document.title = T[l].title;
+    document.querySelectorAll(".wa-link").forEach(function (a) { a.href = "https://wa.me/" + PHONE + "?text=" + encodeURIComponent(T[l].wa); });
+    document.querySelectorAll(".mail-link").forEach(function (a) { a.href = "mailto:" + EMAIL + "?subject=" + encodeURIComponent(T[l].subj); });
+    paintTheme();
+    store.set("lang", l);
+  }
+
+  /* theme */
+  var mq = window.matchMedia("(prefers-color-scheme: dark)");
+  function isDark() { var t = root.dataset.theme; return t === "dark" || (t === "auto" && mq.matches); }
+  function paintTheme() {
+    var d = isDark(), l = root.lang === "en" ? "en" : "es";
+    $("theme-txt").textContent = d ? T[l].light : T[l].dark;
+    $("theme").setAttribute("aria-label", d ? "Modo claro / Light mode" : "Modo oscuro / Dark mode");
+    document.querySelector('meta[name="theme-color"]').content = d ? "#11110f" : "#f1ede4";
+  }
+  root.dataset.theme = store.get("theme") || "auto";
+  if (mq.addEventListener) mq.addEventListener("change", paintTheme);
+  $("theme").addEventListener("click", function () {
+    root.dataset.theme = isDark() ? "light" : "dark";
+    store.set("theme", root.dataset.theme);
+    paintTheme();
+  });
+
+  var saved = store.get("lang");
+  setLang(saved || (/^es/i.test(navigator.language || "es") ? "es" : "en"));
+  $("lang").addEventListener("click", function () { setLang(root.lang === "es" ? "en" : "es"); });
+
+  /* text size */
+  var steps = [1, 1.125, 1.25, 1.4];
+  var i = Math.max(0, steps.indexOf(parseFloat(store.get("scale") || "1")));
+  function scale() {
+    root.style.setProperty("--scale", steps[i]);
+    $("size-down").disabled = i === 0;
+    $("size-up").disabled = i === steps.length - 1;
+    store.set("scale", steps[i]);
+  }
+  scale();
+  $("size-up").addEventListener("click", function () { if (i < steps.length - 1) { i++; scale(); } });
+  $("size-down").addEventListener("click", function () { if (i > 0) { i--; scale(); } });
+
+  /* Santiago clock */
+  function tick() {
+    try {
+      $("clock").textContent = new Intl.DateTimeFormat("es-CL", { hour: "2-digit", minute: "2-digit", hour12: false, timeZone: "America/Santiago" }).format(new Date());
+    } catch (e) {}
+  }
+  tick(); setInterval(tick, 15000);
+
+  /* copy email */
+  $("copy").addEventListener("click", function () {
+    var done = function () { $("copied").textContent = T[root.lang].copied; setTimeout(function () { $("copied").textContent = ""; }, 2400); };
+    if (navigator.clipboard) navigator.clipboard.writeText(EMAIL).then(done, function () {});
+  });
+
+  /* WhatsApp tab: appears after the hero, hides over the contact block */
+  var tab = $("wa-tab"), hero = $("top"), contact = $("contacto");
+  function onScroll() {
+    var past = hero.getBoundingClientRect().bottom < 0;
+    var atContact = contact.getBoundingClientRect().top < window.innerHeight * 0.6;
+    tab.classList.toggle("show", past && !atContact);
+  }
+  window.addEventListener("scroll", onScroll, { passive: true }); onScroll();
+
+  $("year").textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
