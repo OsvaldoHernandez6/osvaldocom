@@ -159,14 +159,6 @@ html[lang="es"] [data-l="en"], html[lang="en"] [data-l="es"] { display: none !im
 .row-link:hover .k { color: inherit; opacity: .7; }
 .row-link:hover .arr { transform: translate(3px, -3px); }
 
-/* ---------- ticker ---------- */
-.ticker { border-block: 1px solid var(--rule); overflow: hidden; background: var(--ink); color: var(--paper); }
-.ticker-track { display: flex; width: max-content; animation: slide 48s linear infinite; }
-.ticker-track span { font-family: var(--serif); font-style: italic; font-size: clamp(1.6rem, 3.4vw, 2.6rem); padding: 10px 0; white-space: nowrap; }
-.ticker-track span::after { content: "✳"; font-style: normal; color: var(--accent); margin: 0 .7em; font-size: .6em; vertical-align: .25em; }
-.ticker:hover .ticker-track { animation-play-state: paused; }
-@keyframes slide { to { transform: translateX(-50%); } }
-
 /* ---------- sections ---------- */
 .sec { padding: 72px 0 96px; }
 @media (min-width: 900px) { .sec { padding: 110px 0 140px; } }
@@ -208,7 +200,10 @@ html[lang="es"] [data-l="en"], html[lang="en"] [data-l="es"] { display: none !im
   .svc li { grid-template-columns: 5rem 1.2fr 1fr; align-items: baseline; padding: 26px 12px; }
   .svc .no { grid-row: auto; padding-top: 0; }
 }
+.svc .sd p + p { margin-top: 12px; }
+.svc .kpi { color: var(--ink); line-height: 1.7; font-size: .74rem; border-left: 2px solid var(--accent); padding-left: 10px; }
 .svc li:hover { background: var(--accent); color: var(--on-accent); }
+.svc li:hover .kpi { color: var(--on-accent); border-color: var(--on-accent); }
 .svc li:hover .no, .svc li:hover p { color: var(--on-accent); }
 
 /* flowchart */
@@ -312,8 +307,6 @@ body { padding-bottom: 52px; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
-  .ticker-track { flex-wrap: wrap; width: auto; }
-  .ticker-track span[aria-hidden] { display: none; }
 }
 </style>
 </head>
@@ -383,13 +376,6 @@ body { padding-bottom: 52px; }
     </div>
   </section>
 
-  <div class="ticker" aria-label="Herramientas / Tools">
-    <div class="ticker-track">
-      <span>Meta Business</span><span>TikTok Ads</span><span>Google Analytics 4</span><span>Looker Studio</span><span>Shopify</span><span>Midjourney</span><span>ElevenLabs</span><span>Claude</span><span>Lovable</span><span>CapCut</span><span>Freepik Spaces</span><span>Facebook Blueprint</span>
-      <span aria-hidden="true">Meta Business</span><span aria-hidden="true">TikTok Ads</span><span aria-hidden="true">Google Analytics 4</span><span aria-hidden="true">Looker Studio</span><span aria-hidden="true">Shopify</span><span aria-hidden="true">Midjourney</span><span aria-hidden="true">ElevenLabs</span><span aria-hidden="true">Claude</span><span aria-hidden="true">Lovable</span><span aria-hidden="true">CapCut</span><span aria-hidden="true">Freepik Spaces</span><span aria-hidden="true">Facebook Blueprint</span>
-    </div>
-  </div>
-
   <!-- ======= 01 PERFIL ======= -->
   <section class="sec frame" id="perfil" aria-labelledby="h1">
     <div class="sec-h">
@@ -427,9 +413,9 @@ body { padding-bottom: 52px; }
     </div>
     <ol class="svc">
       <li><span class="no mono">/01</span><h3><span data-l="es">Estrategia digital y de marca</span><span data-l="en">Digital & brand strategy</span></h3><p><span data-l="es">Diagnóstico, posicionamiento y plan por canal con objetivos y KPIs claros.</span><span data-l="en">Audit, positioning and a channel-by-channel plan with clear goals and KPIs.</span></p></li>
-      <li><span class="no mono">/02</span><h3>Paid Media <em>&amp;</em> Performance</h3><p><span data-l="es">Campañas en Meta, TikTok y Google pensadas para convertir, optimizadas de forma continua.</span><span data-l="en">Meta, TikTok and Google campaigns built to convert and continuously optimised.</span></p></li>
-      <li><span class="no mono">/03</span><h3><span data-l="es">Social Media y contenidos</span><span data-l="en">Social Media & content</span></h3><p><span data-l="es">Líneas editoriales, creatividad y producción de contenido que conecta.</span><span data-l="en">Editorial lines, creative direction and content that connects.</span></p></li>
-      <li><span class="no mono">/04</span><h3><span data-l="es">Métricas y datos</span><span data-l="en">Analytics & data</span></h3><p><span data-l="es">Medición en GA4 y dashboards en Looker Studio para decidir con datos.</span><span data-l="en">GA4 measurement and Looker Studio dashboards to decide with data.</span></p></li>
+      <li><span class="no mono">/02</span><h3>Paid Media <em>&amp;</em> Performance</h3><div class="sd"><p><span data-l="es">Campañas en Meta, TikTok y Google diseñadas para convertir: estructura de cuentas, segmentación, testeo creativo y optimización continua según el objetivo de negocio.</span><span data-l="en">Meta, TikTok and Google campaigns built to convert: account structure, targeting, creative testing and continuous optimisation against business goals.</span></p><p class="kpi mono"><span data-l="es">Métricas</span><span data-l="en">Metrics</span> — CPC · CPL · CPV · CPA · CPM · CTR · CVR · ROAS · Viewability</p></div></li>
+      <li><span class="no mono">/03</span><h3>Social Media</h3><div class="sd"><p><span data-l="es">Estrategia de contenidos, líneas editoriales y planificación de medios en redes, midiendo alcance real y peso de la marca frente a su competencia.</span><span data-l="en">Content strategy, editorial lines and social media planning, measuring real reach and brand weight against competitors.</span></p><p class="kpi mono"><span data-l="es">Métricas</span><span data-l="en">Metrics</span> — Reach · <span data-l="es">Frecuencia</span><span data-l="en">Frequency</span> · SOV · Engagement rate · VTR · <span data-l="es">Crecimiento de comunidad</span><span data-l="en">Community growth</span></p></div></li>
+      <li><span class="no mono">/04</span><h3><span data-l="es">Analítica y medición</span><span data-l="en">Analytics & measurement</span></h3><div class="sd"><p><span data-l="es">Implementación de medición de punta a punta: etiquetado, eventos y conversiones, trazabilidad de campañas y dashboards para decidir con datos.</span><span data-l="en">End-to-end measurement: tagging, events and conversions, campaign tracking and dashboards to make data-driven decisions.</span></p><p class="kpi mono"><span data-l="es">Herramientas</span><span data-l="en">Tools</span> — GA4 · Google Tag Manager · Looker Studio · Meta Pixel &amp; CAPI · UTMs · <span data-l="es">Atribución</span><span data-l="en">Attribution</span></p></div></li>
       <li><span class="no mono">/05</span><h3><span data-l="es">Docencia y talleres</span><span data-l="en">Teaching & workshops</span></h3><p><span data-l="es">Clases de Social Media, Paid Media e IA aplicada para equipos y emprendedores.</span><span data-l="en">Social Media, Paid Media and applied AI training for teams and founders.</span></p></li>
       <li><span class="no mono">/06</span><h3><span data-l="es">Liderazgo de equipos</span><span data-l="en">Team leadership</span></h3><p><span data-l="es">Estructura, procesos y gestión de community, creadores y editores.</span><span data-l="en">Structure, processes and management for community, creators and editors.</span></p></li>
     </ol>
